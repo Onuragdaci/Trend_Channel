@@ -71,14 +71,14 @@ def Plot_Trendlines(Hisse,data,best_period,rval=0.85):
         print(str(Hisse)+' Yazdırıldı.')
         print('Trend Yukarı yönlü kırılmış.')
         print('Hesaplanan R Değeri:'+str(abs(r_value_best_period)))
-        print('Hesaplanan Fark:'+str(upper_diff))
+        print('Hesaplanan Fark:'+str(last_upper_diff))
         plt.savefig(f'{Hisse}_Yukarı_Kırılım.png', bbox_inches='tight', dpi=200)
 
     if r_value_best_period > rval and (last_lower_diff < 0):
         print(str(Hisse)+'Yazdırıldı.')
         print('Trend Aşağı yönlü kırılmış')
         print('Hesaplanan R Değeri:'+str(abs(r_value_best_period)))
-        print('Hesaplanan Fark:'+str(lower_diff))
+        print('Hesaplanan Fark:'+str(last_lower_diff))
         plt.savefig(f'{Hisse}_Aşağı_Kırılım.png', bbox_inches='tight', dpi=200)
   
     return
