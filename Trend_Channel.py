@@ -41,6 +41,7 @@ def Trend_Channel(df):
     return best_period, best_r_value
 
 def Plot_Trendlines(Hisse,data,best_period,rval=0.85):
+    plt.close()
     close_data = data['Close'].tail(best_period)
     x_best_period = np.arange(len(close_data))
     slope_best_period, intercept_best_period, r_value_best_period, _, _ = stats.linregress(x_best_period, close_data)
