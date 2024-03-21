@@ -49,12 +49,11 @@ def Plot_Trendlines(Hisse,data,best_period,rval=0.85):
     lower_channel = (slope_best_period * x_best_period + intercept_best_period) - (trendline.std() * 1.1)
 
     plt.figure(figsize=(10, 6))
-    plt.title(Hisse)
     plt.plot(data.index, data['Close'], label='Kapanış Fiyatı')
     plt.plot(data.index[-best_period:], trendline, 'g-', label=f'Trend Çizgisi (R={r_value_best_period:.2f})')
     plt.fill_between(data.index[-best_period:], upper_channel, trendline, color='lightgreen', alpha=0.3, label='Üst Kanal')
     plt.fill_between(data.index[-best_period:], trendline, lower_channel, color='lightcoral', alpha=0.3, label='Alt Kanal')
-    plt.title('Kapanış Fiyatı ve Trend Çizgisi')
+    plt.title(str(Hisse)+' Kapanış Fiyatı ve Trend Çizgisi')
     plt.xlabel('Tarih Endeksi')
     plt.ylabel('Kapanış Fiyatı')
     plt.legend()
